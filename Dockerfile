@@ -1,11 +1,11 @@
 # Use the latest version of Alpine
 FROM alpine:latest
-MAINTAINER Andreas Pfeiffer - Netstack <pfeiffer@netstack.de>
+LABEL maintainer="Netstack GmbH <info@netstack.de>"
 
 # Set environment variables
 ENV PHP_VERSION=82
 
-# Install dependencies and PHP 8.2 with Nginx
+# Install dependencies and PHP 8.2 with Nginx and Docker for docker in docker builds 
 RUN apk add --no-cache \
     nginx \
     bash \
@@ -43,7 +43,8 @@ RUN apk add --no-cache \
     php${PHP_VERSION}-bcmath \
     php${PHP_VERSION}-sockets \
     nodejs \
-    npm
+    npm \
+    docker
 
 RUN ln -s /usr/bin/php${PHP_VERSION} /usr/bin/php
 
