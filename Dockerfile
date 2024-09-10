@@ -42,6 +42,7 @@ RUN apk add --no-cache \
     php${PHP_VERSION}-ftp \
     php${PHP_VERSION}-bcmath \
     php${PHP_VERSION}-sockets \
+    mariadb-connector-c \
     nodejs \
     npm \
     docker
